@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" name="YllkaMehmeti">
+    <title>Mind Care</title>
+    <script src="javascript.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+</head>
+
+<body onload="InicializimiOra()">
+    <script>
+        //Alerti apo mesazhi i mireseardhjes ne faqe
+        window.alert("Ti nuk je vetem, te gjithe jemi ketu per ty!");
+
+    </script>
+
+    <div class="koka">
+        <a href="index.html" class="fa fa-facebook"></a>
+        <a href="index.html" class="fa fa-twitter"></a>
+        <a href="index.html" class="fa fa-google"></a>
+        <a href="index.html" class="fa fa-linkedin"></a>
+        <a href="index.html" class="fa fa-phone"> +383-49-585-105</a>
+        <a href="index.html" class="fa fa-clock-o"> E hene - E Diele `24/7`</a>
+        <a href="index.html" class="fa fa-envelope"> info@mindcare.com</a>
+    </div>
+
+    <div class="logo">
+        <img src="foto/logo.png" width="300px" height="100px">
+    </div>
+
+    <div class="navigimi">
+        <a href="index.html" target="_blank" class="active">Ballina</a>
+        <a href="departamentet.html" target="_blank">Departamentet</a>
+        <a href="lajme.html" target="_blank">Lajme</a>
+        <a href="pacientet.html" target="_blank">Pacientet</a>
+        <a href="ofertat.html" target="_blank">Ofertat</a>
+        <a href="index.html" class="fa fa-bars"></a>
+    </div>
+
+    <div onload="InicializimiOra()">
+        <div id="kohatani">
+            <a id="dita">1</a>
+            <a id="muaji">Janar</a>
+            <a id="viti">0</a>,
+            <a id="ora">12</a>:
+            <a id="minutat">00</a>:
+            <a id="sekondat">00</a>:
+            <a id="milisekondat">000</a>
+        </div>
+    </div>
+
+    <script>
+        // Kodi per kohen aktuale duke shfrytezuar sistemin operativ
+        Number.prototype.pad = function(n) {
+            for (var r = this.toString(); r.length < n; r = 0 + r);
+            return r;
+        };
+
+        function InicializimiKoha() {
+            var tani = new Date();
+            var milisekondat = tani.getMilliseconds(),
+                sekondat = tani.getSeconds(),
+                minutat = tani.getMinutes(),
+                ora = tani.getHours(),
+                muaji = tani.getMonth(),
+                dita = tani.getDate(),
+                viti = tani.getFullYear();
+            var Muaji = ["Janar", "Shkurt", "Mars", "Prill", "Maj", "Qershor",
+                "Korrik", "Gusht", "Shtator", "Tetor", "Nentor", "Dhjetor"
+            ];
+            var tags = ["muaji", "dita", "viti", "ora", "minutat", "sekondat",
+                "milisekondat"
+            ]
+            corr = [Muaji[muaji], dita, viti, ora.pad(2), minutat.pad(2),
+                sekondat.pad(2), milisekondat
+            ];
+            for (var i = 0; i < tags.length; i++)
+                document.getElementById(tags[i]).firstChild.nodeValue =
+                corr[i];
+        }
+
+        function InicializimiOra() {
+            InicializimiKoha();
+            window.setInterval("InicializimiKoha()", 1)
+        }
+
+    </script>
+
+    <section class="permbajtja1">
+        <div>
+            <h2 class="titulli1">Shendeti mbi te gjitha!</h2>
+            <h1 id="titulli2">MIND CARE </h1>
+            <p id="paragrafi">Ne jemi ketu per ju, duke bere me te miren tone!</p>
+            <button class="btndetajet" type="button" onclick="document.getElementById('paragrafi').innerHTML = 'Mind Care eshte nje nga qendrat me te kualifikuara ne vend!'">Kliko per me shume...</button>
+        </div>
+
+        <section class="seksioni2">
+
+            <div class="permbajtja2">
+                <div class="kolona1">
+                    <img src="foto/tablet.png" width="236" height="110">
+                    <p>Sherbime farmaceutike</p>
+                </div>
+                <div class="kolona2"><img src="foto/24h.png" width="236" height="100">
+                    <p>24h ne linje</p>
+                </div>
+                <div class="kolona3"><img src="foto/personeli.png" width="236" height="120">
+                    <p>Staf i kualifikuar</p>
+                </div>
+                <div class="kolona4"><img src="foto/transporti.png" width="236" height="130">
+                    <p>Transport i shpejte</p>
+                </div>
+            </div>
+
+            <div class="stafi">
+                <div class="kolona-mjeku1">
+                    <img src="foto/MarshaM.Linehan.jpg" width="287px" height="320px">
+                </div>
+                <div class="kolona-mjeku2">
+                    <img src="foto/GeoffreyMiller.jpg" width="288px" height="320px">
+                </div>
+                <div class="kolona-mjeku3">
+                    <img src="foto/JenniferEberhardt.jpg" width="282px" height="321px">
+                </div>
+            </div>
+
+            <div class="orari-sherbimet">
+
+                <div class="korniza-majt">
+                    <h3><a href="#" class="fa fa-clock-o"><b style="color: black">&emsp;Orari i punes</b></a></h3><br>
+                    <h1>E hene - E premte &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;08:00 - 22:00</h1>
+                    <p>........................................................</p><br>
+                    <h1>E shtune &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 08:00 - 18:00</h1>
+                    <p>........................................................</p><br>
+                    <h1>E diel &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Mbyllur</h1>
+                    <p>........................................................</p><br>
+                    <p style="color: black"><b> Ndihme ?</b></p><br>
+                    <h1>Na kontaktoni ne numrin e telefonit ose thjeshte shtypni butonin : </h1><br>
+                    <button class="btnkontakti">Kontakti</button>
+                </div>
+
+                <div class="korniza-djatht">
+                    <h1>MIRE SE VINI NE <span style="color: dodgerblue">MIND CARE</span></h1><br>
+                    <p>Mind Care eshte nder qendrat me te kualifikuara, ne tere Kosoven, persa i perket shendetit mendor, duke u perkujdesur per secilin person me perkushtimin me te madh nga ana e stafit tone.</p><br>
+
+                    <div class="kolonat">
+
+                        <div class="rreshti1">
+                            <h1>Vendndodhja</h1><br>
+                            <p>Qendra jone operon ne te gjitha qytetet e medha te Kosoves</p><br><br>
+                            <h1>Sherbimi</h1><br>
+                            <p>Eshte qendra e pare ne Kosove, e cila ofron sherbim edhe ne shtepi te pacientit, ne pamundesi qe ai te vije ne qender.</p><br>
+                        </div>
+
+                        <div class="rreshti2">
+                            <h1>Medikametet</h1><br>
+                            <p>Qendra jone ofron medikamente me perardhje bimore te cilat kane efekt rikuperues dhe me te shendetshem, ndryshe nga ato artificiale</p>
+                            <h1>Konsult rreth medikamenteve</h1><br>
+                            <p>Konsultim me stafin tone rreth cdo pacartesie mbi perdorimin apo efektin e medikamenteve</p><br><br>
+                        </div>
+
+                        <div class="rreshti3">
+                            <h1>Sherbim efikas</h1><br>
+                            <p>Sherbim i shpejte dhe cilesore brenda orarit te punes, por per ndonje emergjence edhe jashte tij</p><br><br>
+                            <h1>Keshilla mjeksore</h1><br>
+                            <p>Keshilla nga specialistet e fushes mbi cdo gje qe do te keni nevoje</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+</body>
+
+</html>

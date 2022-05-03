@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" name="YllkaMehmeti">
+    <title>Mind Care - Pacientet</title>
+    <script src="javascript.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+</head>
+
+<body onload="InicializimiOra()">
+
+    <div class="koka">
+        <a href="index.html" class="fa fa-facebook"></a>
+        <a href="index.html" class="fa fa-twitter"></a>
+        <a href="index.html" class="fa fa-google"></a>
+        <a href="index.html" class="fa fa-linkedin"></a>
+        <a href="index.html" class="fa fa-phone"> +383-49-585-105</a>
+        <a href="index.html" class="fa fa-clock-o"> E hene - E Diele `24/7`</a>
+        <a href="i.html" class="fa fa-envelope"> info@mindcare.com</a>
+    </div>
+
+    <div class="logo">
+        <img src="foto/logo.png" width="300px" height="100px">
+    </div>
+
+    <div class="navigimi">
+        <a href="index.html" target="_blank">Ballina</a>
+        <a href="departamentet.html" target="_blank">Departamentet</a>
+        <a href="lajme.html" target="_blank">Lajme</a>
+        <a href="pacientet.html" target="_blank" class="active">Pacientet</a>
+        <a href="ofertat.html" target="_blank">Ofertat</a>
+        <a href="index.html" class="fa fa-bars"></a>
+    </div>
+
+     <div onload="InicializimiOra()">
+        <div id="kohatani">
+            <a id="dita">1</a>
+            <a id="muaji">Janar</a>
+            <a id="viti">0</a>,
+            <a id="ora">12</a>:
+            <a id="minutat">00</a>:
+            <a id="sekondat">00</a>:
+            <a id="milisekondat">000</a>
+        </div>
+    </div>
+
+    <script>
+        // Kodi per kohen aktuale duke shfrytezuar sistemin operativ
+        Number.prototype.pad = function(n) {
+            for (var r = this.toString(); r.length < n; r = 0 + r);
+            return r;
+        };
+
+        function InicializimiKoha() {
+            var tani = new Date();
+            var milisekondat = tani.getMilliseconds(),
+                sekondat = tani.getSeconds(),
+                minutat = tani.getMinutes(),
+                ora = tani.getHours(),
+                muaji = tani.getMonth(),
+                dita = tani.getDate(),
+                viti = tani.getFullYear();
+            var Muaji = ["Janar", "Shkurt", "Mars", "Prill", "Maj", "Qershor",
+                "Korrik", "Gusht", "Shtator", "Tetor", "Nentor", "Dhjetor"
+            ];
+            var tags = ["muaji", "dita", "viti", "ora", "minutat", "sekondat",
+                "milisekondat"
+            ]
+            corr = [Muaji[muaji], dita, viti, ora.pad(2), minutat.pad(2),
+                sekondat.pad(2), milisekondat
+            ];
+            for (var i = 0; i < tags.length; i++)
+                document.getElementById(tags[i]).firstChild.nodeValue =
+                corr[i];
+        }
+
+        function InicializimiOra() {
+            InicializimiKoha();
+            window.setInterval("InicializimiKoha()", 1)
+        }
+    </script>
+<br>
+
+                <div class="klientet">
+                <section class="container" id="slider">
+                    <div class="klienti">
+                        <h1>Pacientja jone</h1><br>
+                        <img style="margin-left:350px" src="foto/qika1.jpg" alt="Fotoja e klientit" width="150px" height="150px"><br>
+                        <p>Une jam nje paciente ne qendren Mind Care. Jam ndare shume e kenaqur me sherbimin e kesaj qendre dhe ua rekomandoje te gjithe atyre qe kan probleme te drejtojhen ketu.</p><br>
+                        <p style="font-size: 50px">"</p>
+                        <h2>Eva Ahmeti</h2>
+                        <h4>Studente</h4>
+                    </div>
+
+                    <div class="klienti">
+                        <h1>Pacienti yne</h1><br>
+                        <img style="margin-left:350px" src="foto/djali1.jpg" alt="Fotoja e klientit" width="150px" height="150px"><br>
+                        <p>Une jam nje pacient ne qendren Mind Care. Si nje student i cili kishte probleme me depresionin dhe anoreksine, mendoja se jeta ime nuk do te kishte me ndonje kuptim, por kjo ishte derisa shkova ne kete qender.</p><br>
+                        <p style="font-size: 50px">"</p>
+                        <h2>Redon Hasani</h2>
+                        <h4>Student</h4>
+                    </div>
+
+                    <div class="klienti">
+                        <h1>Pacientja jone</h1><br>
+                        <img style="margin-left:350px" src="foto/qika2.jpg" alt="Fotoja e klientit" width="150px" height="150px"><br>
+                        <p>Une jam nje paciente ne qendren Mind Care. Mund te them me bindje te plote se keta njerez me shpetuan jeten dhe me te vertet kjo qender eshte me secili prej nesh.</p><br>
+                        <p style="font-size: 50px">"</p>
+                        <h2>Belinda Tahiri</h2>
+                        <h4>Studente</h4>
+                    </div>
+
+                </section>
+            </div>
+            <script>
+                //slideri i fotove te klienteve
+                const klientet = document.querySelectorAll(".klienti");
+
+                let klienti = document.getElementsByClassName("klienti");
+                let slider = document.getElementById("slider");
+
+                const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+
+                function autoPlay() {
+                    if (slider.scrollLeft > (maxScrollLeft - 1)) {
+                        slider.scrollLeft -= maxScrollLeft
+                    } else {
+                        slider.scrollLeft += 1;
+                    }
+                }
+
+                let play = setInterval(autoPlay, 10)
+
+                for (var i = 0; i < klienti.length; i++) {
+                    klienti[i].addEventListener("mouseover", function() {
+                        clearInterval(play);
+                    });
+
+                    klienti[i].addEventListener("mouseout", function() {
+                        return play = setInterval(autoPlay, 10);
+                    });
+                }
+
+            </script>
+
+
+
+</body>
+</html>

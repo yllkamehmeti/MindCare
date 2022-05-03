@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" name="YllkaMehmeti">
+    <title>Mind Care - Ofertat</title>
+    <script src="javascript.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+</head>
+
+<body onload="InicializimiOra()">
+
+    <div class="koka">
+        <a href="index.html" class="fa fa-facebook"></a>
+        <a href="index.html" class="fa fa-twitter"></a>
+        <a href="index.html" class="fa fa-google"></a>
+        <a href="index.html" class="fa fa-linkedin"></a>
+        <a href="index.html" class="fa fa-phone"> +383-49-585-105</a>
+        <a href="index.html" class="fa fa-clock-o"> E hene - E Diele `24/7`</a>
+        <a href="index.html" class="fa fa-envelope"> info@mindcare.com</a>
+    </div>
+
+    <div class="logo">
+        <img src="foto/logo.png" width="300px" height="100px">
+    </div>
+
+    <div class="navigimi">
+        <a href="index.html" target="_blank">Ballina</a>
+        <a href="departamentet.html" target="_blank">Departamentet</a>
+        <a href="lajme.html" target="_blank">Lajme</a>
+        <a href="pacientet.html" target="_blank">Pacientet</a>
+        <a href="ofertat.html" target="_blank" class="active">Ofertat</a>
+        <a href="index.html" class="fa fa-bars"></a>
+    </div>
+
+    <div onload="InicializimiOra()">
+        <div id="kohatani">
+            <a id="dita">1</a>
+            <a id="muaji">Janar</a>
+            <a id="viti">0</a>,
+            <a id="ora">12</a>:
+            <a id="minutat">00</a>:
+            <a id="sekondat">00</a>:
+            <a id="milisekondat">000</a>
+        </div>
+    </div>
+
+    <script>
+        // Kodi per kohen aktuale duke shfrytezuar sistemin operativ
+        Number.prototype.pad = function(n) {
+            for (var r = this.toString(); r.length < n; r = 0 + r);
+            return r;
+        };
+
+        function InicializimiKoha() {
+            var tani = new Date();
+            var milisekondat = tani.getMilliseconds(),
+                sekondat = tani.getSeconds(),
+                minutat = tani.getMinutes(),
+                ora = tani.getHours(),
+                muaji = tani.getMonth(),
+                dita = tani.getDate(),
+                viti = tani.getFullYear();
+            var Muaji = ["Janar", "Shkurt", "Mars", "Prill", "Maj", "Qershor",
+                "Korrik", "Gusht", "Shtator", "Tetor", "Nentor", "Dhjetor"
+            ];
+            var tags = ["muaji", "dita", "viti", "ora", "minutat", "sekondat",
+                "milisekondat"
+            ]
+            corr = [Muaji[muaji], dita, viti, ora.pad(2), minutat.pad(2),
+                sekondat.pad(2), milisekondat
+            ];
+            for (var i = 0; i < tags.length; i++)
+                document.getElementById(tags[i]).firstChild.nodeValue =
+                corr[i];
+        }
+
+        function InicializimiOra() {
+            InicializimiKoha();
+            window.setInterval("InicializimiKoha()", 1)
+        }
+
+    </script>
+
+    <div class="cmimorja">
+        <h1>Ofertat</h1><br><br>
+        <h4>Keto jane disa nga ofertat tona, me cmimet me te arsyeshme ne treg. Shikoni ato dhe zgjedhni ate per te cilen keni nevoje me se shumti!</h4><br><br>
+        <div class="ofertat">
+            <div class="oferta1">
+                <h1>Oferta 1</h1><br>
+                <h5>Konsulta</h5>
+                <p>(Konsulta me nje specialist)</p><br>
+                <h5>Medikamentet</h5>
+                <p>(Bimore apo artificiale)</p><br>
+                <h5>Kontrolla e dyte</h5>
+                <p>(Konsulta pas perdorimit te mediakmenteve)</p><br><br>
+                <h6>Vetem 19.99 Euro</h6><br><br>
+                <button class="btnporosit">Porosit !</button>
+            </div>
+
+            <div class="oferta2">
+                <h1>Oferta 2</h1><br>
+                <h5>Sherbimi ne shtepi</h5>
+                <p>(Stafi yne vjen tek ju!)</p><br>
+                <h5>Medikamentet</h5>
+                <p>(Me shume mundesi do te jene artificiale)</p><br>
+                <h5>Transporti deri tek qendra</h5>
+                <p>(Behet me nje veture)</p><br><br>
+                <h6>Vetem 59.99 Euro</h6><br><br>
+                <button class="btnporosit">Porosit !</button>
+            </div>
+
+            <div class="oferta3">
+                <h1>Oferta 3</h1><br>
+                <h5>Konsulta</h5>
+                <p>(Me nje specialist te qendres tone)</p><br>
+                <h5>Shtrimi ne qender</h5>
+                <p>(Akomodimi ne qendren tone)</p><br>
+                <h5>Medikamentet</h5>
+                <p>(Varesisht nga gjendja juaj)</p><br><br>
+                <h6>Vetem 129.99 Euro</h6><br><br>
+                <button class="btnporosit">Porosit !</button>
+            </div>
+        </div>
+    </div>
+    
+
+
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" name="YllkaMehmeti">
+    <title>Mind Care - Departamentet</title>
+    <script src="javascript.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+</head>
+
+<body onload="InicializimiOra()">
+
+    <div class="koka">
+        <a href="index.html" class="fa fa-facebook"></a>
+        <a href="index.html" class="fa fa-twitter"></a>
+        <a href="index.html" class="fa fa-google"></a>
+        <a href="index.html" class="fa fa-linkedin"></a>
+        <a href="index.html" class="fa fa-phone"> +383-49-585-105</a>
+        <a href="index.html" class="fa fa-clock-o"> E hene - E Diele `24/7`</a>
+        <a href="index.html" class="fa fa-envelope"> info@mindcare.com</a>
+    </div>
+
+    <div class="logo">
+        <img src="foto/logo.png" width="300px" height="100px">
+    </div>
+
+    <div class="navigimi">
+        <a href="index.html" target="_blank">Ballina</a>
+        <a href="departamentet.html" target="_blank" class="active">Departamentet</a>
+        <a href="lajme.html" target="_blank">Lajme</a>
+        <a href="pacientet.html" target="_blank">Pacientet</a>
+        <a href="ofertat.html" target="_blank">Ofertat</a>
+        <a href="index.html" class="fa fa-bars"></a>
+    </div>
+
+    <div onload="InicializimiOra()">
+        <div id="kohatani">
+            <a id="dita">1</a>
+            <a id="muaji">Janar</a>
+            <a id="viti">0</a>,
+            <a id="ora">12</a>:
+            <a id="minutat">00</a>:
+            <a id="sekondat">00</a>:
+            <a id="milisekondat">000</a>
+        </div>
+    </div>
+
+    <script>
+        // Kodi per kohen aktuale duke shfrytezuar sistemin operativ
+        Number.prototype.pad = function(n) {
+            for (var r = this.toString(); r.length < n; r = 0 + r);
+            return r;
+        };
+
+        function InicializimiKoha() {
+            var tani = new Date();
+            var milisekondat = tani.getMilliseconds(),
+                sekondat = tani.getSeconds(),
+                minutat = tani.getMinutes(),
+                ora = tani.getHours(),
+                muaji = tani.getMonth(),
+                dita = tani.getDate(),
+                viti = tani.getFullYear();
+            var Muaji = ["Janar", "Shkurt", "Mars", "Prill", "Maj", "Qershor",
+                "Korrik", "Gusht", "Shtator", "Tetor", "Nentor", "Dhjetor"
+            ];
+            var tags = ["muaji", "dita", "viti", "ora", "minutat", "sekondat",
+                "milisekondat"
+            ]
+            corr = [Muaji[muaji], dita, viti, ora.pad(2), minutat.pad(2),
+                sekondat.pad(2), milisekondat
+            ];
+            for (var i = 0; i < tags.length; i++)
+                document.getElementById(tags[i]).firstChild.nodeValue =
+                corr[i];
+        }
+
+        function InicializimiOra() {
+            InicializimiKoha();
+            window.setInterval("InicializimiKoha()", 1)
+        }
+
+    </script>
+
+    <section class="seksioni3">
+
+        <div class="prapavija-se3">
+            <h1>Fushat tona</h1><br>
+            <p>Ne ofrojme sherbime dhe informata ne fushat me te rendesishme te cilat mund t'i <br>gjeni me poshte me informata me te detajizuara</p><br><br>
+            <div class="departamentet">
+                <div class="departamenti1">
+                    <img src="foto/anoreksia.jpg">
+                    <h1>Anoreksia</h1>
+                </div>
+                <div class="departamenti2">
+                    <img src="foto/depresioni.jpg">
+                    <h1>Depresioni</h1>
+                </div>
+                <div class="departamenti3">
+                    <img src="foto/ankhi.JPG">
+                    <h1>Ankthi</h1>
+                </div>
+                <div class="departamenti4">
+                    <img src="foto/bulimia.jpg">
+                    <h1>Bulimia</h1>
+                </div>
+                <div class="departamenti5">
+                    <img src="foto/bipolar.JPG">
+                    <h1>Bipolariteti</h1>
+                </div>
+            </div>
+
+            <div class="permbajtja-departamentet">
+
+                <div class="teksti-departamentet">
+                    <h1>Anoreksia</h1><br>
+                    <p>Anoreksia eshte nje crregullim i ushqyerjes, i cili rrjedh si pasoje e shume gjerave qe mund te ndikojne ne sistemin tone mendor.</p><br>
+                    <p>Anorekisa manifestohet me mungese te ndejnjes se urise, apo edhe nese ndjen uri personi ne fjale, refuzon te haje, shpesh me arsyetimin e rreme se ka ngrene me heret.</p><br>
+                    <div class="departamentet-detaje">
+                        <h1>&ensp;<span style="color: dodgerblue" class="iconify" data-icon="foundation:first-aid"></span>Disponueshmeri</h1><br>
+                        <h1><span style="color: dodgerblue" class="iconify" data-icon="foundation:first-aid"></span> Pranueshmeri</h1><br>
+                        <h1>&ensp; <span style="color: dodgerblue" class="iconify" data-icon="foundation:first-aid"></span> Staf i kualifikuar</h1>
+                        <h1><span style="color: dodgerblue" class="iconify" data-icon="foundation:first-aid"></span> Kualitet</h1><br>
+                        <h1>&ensp;<span style="color:dodgerblue" class="iconify" data-icon="foundation:first-aid"></span> Kuantitet</h1><br>
+                        <h1><span style="color: dodgerblue" class="iconify" data-icon="foundation:first-aid"></span> Asistenc</h1>
+                    </div>
+
+                    <button class="detaje-dep">Shiko detajet</button>
+                </div>
+            </div>
+            <div class="foto-departamentet">
+                <img src="foto/anoreksia1.jpg">
+            </div>
+
+        </div>
+        <div class="statistikat">
+            <div class="vizitor">
+                <p>&#9787;</p><br>
+                <h1>5000+</h1><br>
+                <h3>Vizitor/Pacient</h3>
+            </div>
+            <div class="sherbime">
+                <p a href="#" class="fa fa-rocket" </p><br>
+                <h1>05</h1><br>
+                <h3>Sherbime</h3>
+            </div>
+            <div class="puntoret">
+                <p a href="#" class="fa fa-user-md"><br>
+                <h1>100+</h1><br>
+                <h3>Puntore</h3>
+            </div>
+            <div class="pikat">
+                <p a href="#" class="fa fa-globe"><br>
+                <h1>07</h1><br>
+                <h3>Pika</h3>
+            </div>
+        </div>
+
+       
+    </section>
+
+</body>
+
+</html>

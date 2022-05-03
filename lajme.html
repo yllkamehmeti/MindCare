@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" name="YllkaMehmeti">
+    <title>Mind Care - Lajme</title>
+    <script src="javascript.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body onload="InicializimiOra()">
+
+    <div class="koka">
+        <a href="index.html" class="fa fa-facebook"></a>
+        <a href="index.html" class="fa fa-twitter"></a>
+        <a href="index.html" class="fa fa-google"></a>
+        <a href="index.html" class="fa fa-linkedin"></a>
+        <a href="index.html" class="fa fa-phone"> +383-49-585-105</a>
+        <a href="index.html" class="fa fa-clock-o"> E hene - E Diele `24/7`</a>
+        <a href="index.html" class="fa fa-envelope"> info@mindcare.com</a>
+    </div>
+
+    <div class="logo">
+        <img src="foto/logo.png" width="300px" height="100px">
+    </div>
+
+    <div class="navigimi">
+        <a href="index.html" target="_blank">Ballina</a>
+        <a href="departamentet.html" target="_blank">Departamentet</a>
+        <a href="lajme.html" target="_blank" class="active">Lajme</a>
+        <a href="pacientet.html" target="_blank">Pacientet</a>
+        <a href="ofertat.html" target="_blank">Ofertat</a>
+        <a href="index.html" class="fa fa-bars"></a>
+    </div>
+
+    <div onload="InicializimiOra()">
+        <div id="kohatani">
+            <a id="dita">1</a>
+            <a id="muaji">Janar</a>
+            <a id="viti">0</a>,
+            <a id="ora">12</a>:
+            <a id="minutat">00</a>:
+            <a id="sekondat">00</a>:
+            <a id="milisekondat">000</a>
+        </div>
+    </div>
+
+    <script>
+        // Kodi per kohen aktuale duke shfrytezuar sistemin operativ
+        Number.prototype.pad = function(n) {
+            for (var r = this.toString(); r.length < n; r = 0 + r);
+            return r;
+        };
+
+        function InicializimiKoha() {
+            var tani = new Date();
+            var milisekondat = tani.getMilliseconds(),
+                sekondat = tani.getSeconds(),
+                minutat = tani.getMinutes(),
+                ora = tani.getHours(),
+                muaji = tani.getMonth(),
+                dita = tani.getDate(),
+                viti = tani.getFullYear();
+            var Muaji = ["Janar", "Shkurt", "Mars", "Prill", "Maj", "Qershor",
+                "Korrik", "Gusht", "Shtator", "Tetor", "Nentor", "Dhjetor"
+            ];
+            var tags = ["muaji", "dita", "viti", "ora", "minutat", "sekondat",
+                "milisekondat"
+            ]
+            corr = [Muaji[muaji], dita, viti, ora.pad(2), minutat.pad(2),
+                sekondat.pad(2), milisekondat
+            ];
+            for (var i = 0; i < tags.length; i++)
+                document.getElementById(tags[i]).firstChild.nodeValue =
+                corr[i];
+        }
+
+        function InicializimiOra() {
+            InicializimiKoha();
+            window.setInterval("InicializimiKoha()", 1)
+        }
+
+    </script>
+
+    <div class="titulli-seksioni6">
+                    <h1 style="font-size: 25px" id="titulli">Lajmet</h1>
+                    <p class="paragrafi">Ketu jane paraqitur tri lajmet me te klikuara dhe kerkuara nga shumica e vizitoreve te faqes tone, duke marre parasysh qe shumica e tyre jane studente dhe perballen me probleme perafersisht te njejta</p><br>
+                </div>
+
+                <div class="lajmet">
+                    <div class="lajmi" id="lajmi1">
+                        <img src="foto/lajmi1.JPG" alt="#" width="330px" height="200px">
+                        <h1 class="bg-secondary text-white">Anoreksia vs Bulimia</h1><br><br><br>
+                        <a href="index.html" class="fa fa-comment"> 817 Comment</a>&emsp; <a href="index.html" class="fa fa-heart"> 2137 Likes</a><br>
+                        <p>Anoreksia eshte mungesa e urise, apo ndalimi i ushqyerjes me vetdije.<br>
+                            Bulimia eshte ngrenja e pa kontrolluar e ushqimit, dhe me pas tendenca per ta nxjerre sa me shpejt jashte trupit.<br>
+                            Te dyja keto shkaktohen nga ankthi, depresioni, stresi i tepert ne shkolle, ne pune, ne shtepi, apo kudo etj.<br>
+                            <button class="shikodetajet">Per me shume...</button></p>
+                    </div>
+
+                    <div class="lajmet">
+                        <div class="lajmi" id="lajmi1">
+                            <img src="foto/lajmi2.jpg" alt="#" width="330px" height="200px">
+                            <h1 class="bg-secondary text-white">Depresioni dhe Ankthi</h1><br><br><br>
+                            <a href="index.html" class="fa fa-comment"> 532 Comment</a>&emsp; <a href="index.html" class="fa fa-heart"> 1893 Likes</a><br>
+                            <p>Depresioni eshte gjendja mendore dhe emocionale ku nuk te intereson per asgje.<br>
+                                Ankthi eshte gjendja mendore dhe emocionale ku te intereson edhe per gjera te pa rendesishme.<br> 
+                                Te dyja keto shkaktohen nga stresi se shkolle, shoqeria e keqe, mungesa e harmonise ne familje, bullizmi etj.<br>
+                                <button class="shikodetajet">Per me shume...</button></p>
+                        </div>
+                    </div>
+
+                    <div class="lajmet">
+                        <div class="lajmi" id="lajmi1">
+                            <img src="foto/lajmi3.JPG" alt="#" width="330px" height="200px">
+                            <h1 class="bg-secondary text-white">Bipolariteti</h1><br><br><br>
+                            <a href="index.html" class="fa fa-comment"> 475 Comment</a>&emsp; <a href="index.html" class="fa fa-heart"> 958 Likes</a><br>
+                            <p>Bipolariteti eshte nje crregullim i humorit, ku personi ne fjale ka luhatje te humorit brenda nje kohe shume te shkurter, ku mund te njehet i lumtur dhe i trishtuar brenda nje minuti.<br>
+                            Ky crregullim mund te shkaktohet nga faktor te ndryshem, e me se shumti nga ndonje traume e bartur nga femijeria.<br>
+                            <button class="shikodetajet">Per me shume...</button></p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+</body>
+
+</html>
